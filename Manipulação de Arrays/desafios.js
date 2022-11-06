@@ -49,17 +49,40 @@ function get_names() {
 }
 
 //Questão 5
-
-insert_id();
+//insert_id();
 
 function insert_id() {
   var pessoas_com_id = Array();
-  for (i = 0; i < pessoas.length; i++){
-    pessoas_com_id[i] = { id: i + 1, name: pessoas[i].name, age: pessoas[i].age };
-  };
+  for (i = 0; i < pessoas.length; i++) {
+    pessoas_com_id[i] = {
+      id: i + 1,
+      name: pessoas[i].name,
+      age: pessoas[i].age,
+    };
+  }
   return pessoas_com_id;
-};
+}
 
 //Questão 6
+//get_adults();
+
+function get_adults() {
+  var adults = Array();
+  for (i = 0; i < pessoas.length; i++) {
+    if (pessoas[i].age >= 18) {
+      adults.push(pessoas[i]);
+    }
+  }
+  return adults;
+}
 
 //Questão 7
+mid_ages();
+
+function mid_ages() {
+  var mid = 0.0;
+  for (i = 0; i < pessoas.length; i++) {
+    mid += pessoas[i].age;
+  };
+  return mid = mid/pessoas.length;
+};
